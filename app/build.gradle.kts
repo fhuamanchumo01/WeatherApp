@@ -40,7 +40,10 @@ android {
 }
 
 dependencies {
-
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("androidx.compose.runtime:runtime:1.8.3")
+    implementation("androidx.compose.runtime:runtime-livedata:1.8.3")
+    implementation("androidx.compose.runtime:runtime-rxjava2:1.8.3")
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")

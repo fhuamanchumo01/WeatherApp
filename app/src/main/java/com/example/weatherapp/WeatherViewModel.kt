@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class WeatherViewModel : ViewModel(){
     private val weatherApi = RetrofitClass.weatherApi
     private val _weatherResult = MutableLiveData<NetworkResponse<WeatherModel>>()
-    private val weatherResult: LiveData<NetworkResponse<WeatherModel>> = _weatherResult
+     val weatherResult: LiveData<NetworkResponse<WeatherModel>> = _weatherResult
 
     fun getData(city: String){
 

@@ -23,15 +23,15 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun WeatherPage(modifier: Modifier = Modifier){
+fun WeatherPage(viewModel: WeatherViewModel, modifier: Modifier){
 
     var city by remember { mutableStateOf("") }
     Column (
-        modifier = Modifier.fillMaxWidth().padding(8.dp),
+        modifier = modifier.fillMaxWidth().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row (
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
@@ -40,8 +40,11 @@ fun WeatherPage(modifier: Modifier = Modifier){
                 value = city, onValueChange={
                 city = it
             }, label ={ Text("Search for any location") })
-            IconButton(onClick = {}){
-                Icon(imageVector = Icons.Default.Search, contentDescription = "Search  for any location")
+            IconButton(onClick = {
+                viewModel.getData(city)
+            }){
+                Icon(imageVector = Icons.Default.Search,
+                    contentDescription = "Search  for any location")
 
             }
 
